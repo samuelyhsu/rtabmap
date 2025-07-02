@@ -1,5 +1,14 @@
 # Top-Level CmakeLists.txt
 cmake_minimum_required(VERSION 3.14)
+
+set(CMAKE_TOOLCHAIN_FILE
+    "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    CACHE STRING "Vcpkg toolchain file")
+
+set(VCPKG_INSTALLED_DIR
+    "${CMAKE_CURRENT_SOURCE_DIR}/../rtabmap_vcpkg_installed"
+    CACHE STRING "Vcpkg installed directory")
+    
 PROJECT( RTABMap )
 SET(PROJECT_PREFIX rtabmap)
 

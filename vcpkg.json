@@ -1,0 +1,12 @@
+{
+  "dependencies": [
+    "ceres",
+    "g2o",
+    "zlib",
+    "sqlite3",
+    { "name": "opencv", "features": ["contrib", "nonfree"] },
+    { "name": "pcl", "features": ["qt", "vtk"] },
+    "yaml-cpp"
+  ],
+  "builtin-baseline": "07dd18fdd4929d0620267eb9c3de744f5819570a"
+}
