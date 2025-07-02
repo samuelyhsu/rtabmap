@@ -51,6 +51,19 @@ ELSE()
     OUTPUT_NAME ${PROJECT_PREFIX})
 ENDIF()
 
+if(WIN32)
+  if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    find_program(TOOL_WINDEPLOYQT NAMES windeployqt.debug.bat)
+  else()
+    find_program(TOOL_WINDEPLOYQT NAMES windeployqt)
+  endif()
+  add_custom_command(
+    TARGET rtabmap_app
+    POST_BUILD
+    COMMAND ${TOOL_WINDEPLOYQT} $<TARGET_FILE:rtabmap_app>
+    COMMENT "Running windeployqt...")
+endif()
+
 #---------------------------
 # Installation stuff
 #--------------------------- 
